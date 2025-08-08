@@ -1,0 +1,49 @@
+<!-- Admin Login / login.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <!-- UTF8 indicates character set desc generally used everywhere -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- meta tags are for browser and SEO stuff. The above line zooms at 100% at init -->
+    <title>Rodel Advan - Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header id ="header">
+    <!-- <img src="images/profile.png" alt="Rodel Advan Photo" id="profile-pic"> -->
+    <!-- <img src="images/profile1.png" alt="Rodel Advan Photo" id="profile-pic"> -->
+    <h1 id="topName">CarFixer</h1>
+    <h4 id="topProfession">Admin Login</h3>
+    <button id="darkModeToggle" onclick="toggleMode()">🌙</button>
+
+
+</header>
+    <main>
+        <section>
+            <h2>Login</h2>
+            <form action="authenticate.php" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <br>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br>
+                <input type="submit" value="Login">
+            </form>
+        </section>
+    </main>
+    
+<footer>
+    <p>&copy; 2025 Car Fixer</p> 
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

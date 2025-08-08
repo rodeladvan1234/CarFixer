@@ -1,0 +1,59 @@
+<!-- contact.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <!-- UTF8 indicates character set desc generally used everywhere -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- meta tags are for browser and SEO stuff. The above line zooms at 100% at init -->
+    <title>Rodel Advan - Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header id ="header">
+    <!-- <img src="images/profile.png" alt="Rodel Advan Photo" id="profile-pic"> -->
+    <!-- <img src="images/profile1.png" alt="Rodel Advan Photo" id="profile-pic"> -->
+    <h1 id="topName">CarFixer</h1>
+    <h4 id="topProfession">Book your mechanic today!</h3>
+    <button id="darkModeToggle" onclick="toggleMode()">🌙</button>
+</header>
+
+<!-- 4. Clearly labeled sections (e.g., "Personal Info," "About Me," "Education," "Technical Skills")-->
+<nav>
+    <ul id="navList">
+        <li><a href="index.html">About Us</a></li>
+        <li><a href="index.html#mechanics">Mechanics</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<main id="mainContent">
+  <section id="contact">
+    <h2 id="contactHeading">Contact Me</h2>
+    <form action="mailto:rodel.advan@gmail.com" method="POST" enctype="text/plain">
+      <label for="name"><b>Name:</b></label><br>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="subject"><b>Subject:</b></label><br>
+      <input type="text" id="subject" name="subject" required><br><br>
+
+      <label for="message"><b>Message:</b></label><br>
+      <textarea id="message" name="message" rows="6" required></textarea><br><br>
+
+      <button type="submit">Send</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Car Fixer</p> 
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

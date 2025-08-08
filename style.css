@@ -1,0 +1,234 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #004080;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+header, footer {
+    position: relative;
+    text-align: center;
+    padding: 2rem;
+    background-color: #004080;
+    color: white;
+}
+
+header {
+    background-image: url('images/profile1.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+header h1, header h4 {
+    margin-top: 0;
+    margin-bottom: 0.25rem; /* or smaller if needed */
+    text-align: left;
+    margin-left: 1.5rem;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+}
+
+body.dark-mode form {
+    background-color: #1a1a1a;
+    border-color: #444;
+    color: #fff;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.25rem;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+#contactHeading {
+    text-align: center;
+}
+
+
+button{
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #004080;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+
+button:hover {
+    background-color: #002c5e;
+    transform: scale(1.01);
+}
+
+#profile-pic {
+    width: 100px;
+    position: absolute;
+    top: 1rem;
+    border-radius: 20%;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+table {
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #888;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+a:hover {
+    color: crimson;
+}
+
+
+#darkModeToggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body p {
+    line-height: 1.6;
+    margin: 0.5rem 0;
+    padding: 0 1rem;
+}
+
+body td, body th {
+    transition: background-color 0.3s;
+    padding: 1rem;
+    text-align: left;
+
+}
+
+main {
+    padding: 3rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+section {
+    scroll-margin-top: 90px; /* jeno navbar hide na kore fele */
+}
+
+body.dark-mode #darkModeToggle {
+    background-color: #333;
+    color: #fff;
+}
+
+.mylinks {
+    list-style: none;
+    padding: 0;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.mylinks li a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: #004080;
+    font-weight: bold;
+    border: 2px solid #004080;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.mylinks li a:hover {
+    background-color: #800000;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+
+body.dark-mode {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+body.dark-mode header,
+body.dark-mode nav,
+body.dark-mode footer {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+body.dark-mode nav a {
+    color: white;
+}
+
+body.dark-mode a {
+    color: #66ccff;
+}
+
+body.dark-mode table,
+body.dark-mode th,
+body.dark-mode td {
+    border-color: #444;
+}
+
+body.dark-mode tr:nth-child(even) {
+    background-color: #2a2a2a;
+}

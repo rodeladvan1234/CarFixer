@@ -1,0 +1,64 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <!-- UTF8 indicates character set desc generally used everywhere -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- meta tags are for browser and SEO stuff. The above line zooms at 100% at init -->
+    <title>Rodel Advan - Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header id ="header">
+    <!-- <img src="images/profile.png" alt="Rodel Advan Photo" id="profile-pic"> -->
+    <!-- <img src="images/profile1.png" alt="Rodel Advan Photo" id="profile-pic"> -->
+    <h1 id="topName">CarFixer</h1>
+    <h4 id="topProfession">Book your mechanic today!</h3>
+    <button id="darkModeToggle" onclick="toggleMode()">🌙</button>
+</header>
+
+<!-- 4. Clearly labeled sections (e.g., "Personal Info," "About Me," "Education," "Technical Skills")-->
+<nav>
+    <ul id="navList">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#mechanics">Mechanics</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<main id="mainContent">
+
+    <section id="about">
+
+        <h2>About Us</h2>
+        <p>We have been on the local industry fixing cars since 1969. <br> <b>Location:</b> Hotel California, Dhaka, Bangladesh</p>
+        <h2>Select a booking date to get started now!</h2>
+        <!-- Dropdown menu to select booking date -->
+        <label for="booking-date">Choose a date:</label>
+        <input type="date" id="booking-date" name="booking-date" required>
+        <button id="book-now">View Mechanic Options for the date</button>
+    </section>
+
+
+    <section id="mechanics">
+        <h2>Mechanics</h2>
+        <div>
+            <!-- Add mechanics information here -->
+        </div>
+
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Car Fixer</p> 
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
