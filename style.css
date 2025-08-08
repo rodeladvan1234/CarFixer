@@ -96,6 +96,11 @@ button:hover {
     border-radius: 20%;
 }
 
+#mechanix {
+    align-items: center;
+    top: 1rem;
+}
+
 nav ul {
     list-style-type: none;
     padding: 0;
