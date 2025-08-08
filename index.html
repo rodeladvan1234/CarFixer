@@ -42,8 +42,10 @@
         <!-- Dropdown menu to select booking date -->
         <label for="booking-date">Choose a date:</label>
         <input type="date" id="booking-date" name="booking-date" required>
-        <button id="book-now">View Mechanic Options for the date</button>
+        <button id="book-now" onClick = "viewMechanicOptions()">View Mechanic Options for the date</button>
     </section>
+
+    <div id="mechanic-results"></div>
 
 
     <section id="mechanics">

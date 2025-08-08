@@ -23,3 +23,67 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+//NEW STUFF
+
+async function viewMechanicOptions() {
+  const dateInput = document.getElementById('booking-date');
+  const selectedDate = dateInput.value;
+
+  if (!selectedDate) {
+    alert('Please choose a date first.');
+    return;
+  }
+
+  // Show loading state
+  const results = document.getElementById('mechanic-results');
+  results.innerHTML = '<p>Loading available mechanics...</p>';
+
+  try {
+    const res = await fetch('get_mechanics.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ date: selectedDate })
+    });
+
+    const data = await res.json();
+
+    if (!data.ok) {
+      results.innerHTML = '';
+      alert(data.error || 'Something went wrong. Please pick a future date.');
+      return;
+    }
+
+    // Render mechanics
+    if (!data.mechanics || data.mechanics.length === 0) {
+      results.innerHTML = '<p>No mechanics found.</p>';
+      return;
+    }
+
+    const cards = data.mechanics.map(m => `
+      <div class="mechanic-card ${m.available ? 'available' : 'unavailable'}">
+        <img src="${m.photo_url || 'images/placeholder.png'}" alt="${m.name}" />
+        <div class="info">
+          <h3>${m.name}</h3>
+          <p>Booked: ${m.bookings}/4</p>
+          <p>Status: <strong>${m.available ? 'Available' : 'Fully Booked'}</strong></p>
+          ${m.available ? `<button onclick="bookMechanic('${m.id}','${data.date}')">Book ${m.name}</button>` : ''}
+        </div>
+      </div>
+    `).join('');
+
+    results.innerHTML = `
+      <h3>Availability on ${data.date_pretty}</h3>
+      <div class="mechanic-grid">${cards}</div>
+    `;
+  } catch (e) {
+    console.error(e);
+    results.innerHTML = '';
+    alert('Network error. Please try again.');
+  }
+}
+
+// stub for booking action
+function bookMechanic(mechanicId, date) {
+  alert(`Proceed to booking for Mechanic #${mechanicId} on ${date}`);
+}
