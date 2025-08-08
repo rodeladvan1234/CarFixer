@@ -29,6 +29,13 @@ window.addEventListener('DOMContentLoaded', () => {
 async function viewMechanicOptions() {
   const dateInput = document.getElementById('booking-date');
   const selectedDate = dateInput.value;
+  //fetching current date
+  const currentDate = new Date().toISOString().split('T')[0];
+  
+  if (selectedDate < currentDate) {
+    alert('Please select a future date.');
+    return;
+  }
 
   if (!selectedDate) {
     alert('Please choose a date first.');

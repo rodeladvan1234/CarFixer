@@ -1,6 +1,7 @@
 <?php
 // get_mechanics.php
 header('Content-Type: application/json');
+include 'DBConnect.php';
 
 try {
     // ---- 1) Input ----
@@ -28,12 +29,6 @@ try {
     if ($d < $today) {
         echo json_encode(['ok' => false, 'error' => 'Please select an upcoming date.']); exit;
     }
-
-    // ---- 2) DB ----
-    // TODO: replace with your real credentials
-    $dsn = 'mysql:host=localhost;dbname=carfixer;charset=utf8mb4';
-    $user = 'your_user';
-    $pass = 'your_pass';
 
     $pdo = new PDO($dsn, $user, $pass, [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
