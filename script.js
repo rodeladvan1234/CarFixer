@@ -90,7 +90,9 @@ async function viewMechanicOptions() {
   }
 }
 
-// stub for booking action
 function bookMechanic(mechanicId, date) {
-  alert(`Proceed to booking for Mechanic #${mechanicId} on ${date}`);
+  // navigate to booking.php with the chosen mechanic + date
+  const url = `booking.php?mechanic_id=${encodeURIComponent(mechanicId)}&date=${encodeURIComponent(date)}`;
+  window.location.href = url;
 }
+

@@ -1,64 +1,42 @@
 <?php
-// authenticate.php
-session_start();
-include 'DBConnect.php';
+// authenticate.php - processes admin login and redirects to the admin dashboard.
+// This file should only handle form submissions from login.html. It performs basic
+// credential validation (hard‑coded for this assignment) and sets session
+// variables to mark the user as logged in. Upon success it redirects to
+// admin.php; on failure it outputs an error and provides a link back to the
+// login page.
 
-$loggedIn = False;
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    if ($username == '' || $password == '') {
-        echo "Username and password cannot be empty.";
-        exit();
-    }
-
-    if ($username == 'admin' and $password == 'admin123') {
-        $_SESSION['username'] = [
-            'username'=> $username,
-        ];
-        $loggedIn = True;
-        $_SESSION['loggedIn'] = $loggedIn;
-        $_SESSION['LAST_ACTIVITY'] = time(); // Update last activity time
-        exit();
-    }
-
-    if ($result && mysqli_num_rows($result) > 0) {
-        // User authenticated successfully
-        $_SESSION['username'] = [
-            'username'=> $username,
-        ];
-    } else {
-        // Authentication failed
-        echo "Invalid username or password.";
-    }
-}
-
-if ($loggedIn) {
-    header("Location: login.php");
-} else {
-    echo "Please try again.";
-}
+declare(strict_types=1);
 
 session_start();
 
-$timeout = 900; // 15 minutes (but in seconds)
-
-
-if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY']) > $timeout) {
-    // when last request was more than 15 mins ago
-    session_unset();     // Unset $_SESSION
-    session_destroy();   // Destroy session
-    header("Location: login.php"); // Redirect to login
-    exit();
+// Only handle POST requests. If accessed via GET, redirect to the login page.
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Location: login.html');
+    exit;
 }
 
-//Session_unset() and session_destroy() basically does the same thing, but session_unset() only removes the session variables, 
-// while session_destroy() destroys the session itself.
+// Read username and password from the submitted form
+$username = trim($_POST['username'] ?? '');
+$password = trim($_POST['password'] ?? '');
 
-$_SESSION['LAST_ACTIVITY'] = time(); // Update last activity
+// Basic validation to ensure both fields are provided
+if ($username === '' || $password === '') {
+    echo 'Username and password cannot be empty.<br><a href="login.html">Back to login</a>';
+    exit;
+}
 
+// In this sample application the admin credentials are hard‑coded. A real system
+// would verify credentials against a users table and hash passwords.
+if ($username === 'admin' && $password === 'admin123') {
+    $_SESSION['username'] = [ 'username' => $username ];
+    $_SESSION['loggedIn'] = true;
+    $_SESSION['LAST_ACTIVITY'] = time();
+    // Redirect to the admin dashboard on successful login
+    header('Location: admin.php');
+    exit;
+}
 
-?>
-
+// Invalid credentials: show a simple error and link back
+echo 'Invalid username or password.<br><a href="login.html">Back to login</a>';
+exit;

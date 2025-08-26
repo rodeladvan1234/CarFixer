@@ -246,3 +246,90 @@ body.dark-mode tr:nth-child(even) {
 .mechanic-card img { width:80px; height:80px; object-fit:cover; border-radius:8px; }
 .mechanic-card.available { border-color:#2ecc71; }
 .mechanic-card.unavailable { opacity:0.6; }
+
+/* B00kings */
+
+
+.book-wrap {
+  display: flex;
+  justify-content: center;   /* center contents horizontally */
+  align-items: flex-start;   /* align top edges */
+  gap: 10px;                 /* spacing between mechanic card & form */
+  padding: 40px;
+  flex-wrap: wrap;           /* allows stacking on small screens */
+}
+
+.book-wrap > div {
+  max-width: 250px;
+  text-align: center;
+}
+
+.book-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 350px;              /* fixed form width */
+}
+
+.book-form input,
+.book-form textarea {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.book-form button {
+  background: #003366;
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.book-form button:hover {
+  background: #0055aa;
+}
+
+/* c0nfirmati0n page  */
+.success {
+  max-width: 500px;
+  margin: 80px auto;
+  padding: 30px;
+  background: #f0fdf4;
+  border: 2px solid #4ade80;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.success h2 {
+  color: #15803d;
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+.success p {
+  color: #374151;
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.success a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 18px;
+  background: #16a34a;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.success a:hover {
+  background: #15803d;
+}
